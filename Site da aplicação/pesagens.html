@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Pesagens</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+        table {
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Pesagem</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">                
+            </tbody>
+        </table>
+    </div>
+    <a href="index.html">Voltar</a>
+</body>
+<script>
+    const storage = { ...localStorage }
+    const items = Object.keys(storage)    
+    const tableItems = items.map(item => {
+        return `<tr><td>${item}</td><td>${storage[item]}</td></tr>`
+    })    
+    let tableBody = document.querySelector('#tableBody')
+    tableBody.innerHTML = tableItems.join('')
+</script>
+
+</html>

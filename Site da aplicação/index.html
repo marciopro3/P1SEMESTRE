@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Uma balança que vai revolucionar a forma de comunicação dos dispositivos.">
+    <title>Gênova Balanças - Pesagem Web</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <img class="cabecalho-imagem" src="img/logogenova.png" alt="Logo Gênova">
+        <nav class="cabecalho-menu">
+            <a class="cabecalho-menu-item">Início</a>
+            <a href="pesagens.html" class="cabecalho-menu-item">Pesagem</a>
+            <a class="cabecalho-menu-item">Contato</a>
+        </nav>
+    </header>
+
+    <main class="conteudo">
+        <section class="conteudo-principal">
+            <div class="conteudo-principal-escrito">
+                <h1 class="conteudo-principal-escrito-titulo">Indicador <strong>GN 10KS</strong></h1>
+                <h2 class="conteudo-principal-escrito-subtitulo">Peso capturado a partir da nossa
+                    <strong>balança</strong>.
+                </h2>
+                <button id="botaoPesagem" class="conteudo-principal-escrito-botao">REALIZAR PESAGEM</button>
+            </div>
+            <div id="textoIndicador" class="conteudo-principal-indicador">####</div>
+            <img class="conteudo-principal-imagem" src="img/ks.png" alt="Indicador">
+        </section>
+        <section class="conteudo-secundario">
+            <h3 class="conteudo-secundario-titulo"><strong>Manual</strong></h3>
+            <p class="conteudo-secundario-paragrafo"> Clique em <strong>"REALIZAR PESAGEM"</strong> para capturar o peso.</p>
+            <p class="conteudo-secundario-paragrafo">Consulte os relatórios no seu <strong>aplicativo</strong>.</p>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <img class="rodape-imagem" src="img/feob.png" alt="Logo Unifeob">
+    </footer>
+</body>
+<script>
+    let textoIndicador = document.querySelector('#textoIndicador')
+    let botaoPesagem = document.querySelector('#botaoPesagem')
+    botaoPesagem.addEventListener('click', async () => {
+        try {
+            let valorCapturado = await fetch('http://192.168.0.18')
+            let pesoJson = await valorCapturado.json()
+            if (pesoJson.peso) {
+                textoIndicador.innerText = pesoJson.peso
+                let date = new Date().toUTCString()
+                localStorage.setItem(date, pesoJson.peso)
+            }
+        } catch (error) {
+            textoIndicador.innerText = 'ERROR'
+        }
+    })
+</script>
+
+</html>

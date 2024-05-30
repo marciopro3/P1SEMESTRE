@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-size: 100%;  
+    background: linear-gradient(68.15deg, #ffffff 16.62%, #baabff 85.61%);
+}
+
+.cabecalho {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 24px;
+}
+
+.cabecalho-imagem {
+    max-width:280px;
+    max-height:150px;
+    height: 72px;
+}
+
+.cabecalho-menu {
+    display: flex;
+    gap: 82px;
+}
+
+.cabecalho-menu-item {
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.conteudo {
+    margin-bottom: 48px;
+    border-top: 0.4px solid darkblue;    
+}
+
+.conteudo-principal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.conteudo-principal-escrito {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.conteudo-principal-imagem {
+    height: 580px;
+    padding: 24px;
+}
+
+.conteudo-principal-escrito-titulo {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 64px;
+}
+
+.conteudo-principal-escrito-subtitulo {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+}
+
+.conteudo-principal-escrito-botao {
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    font-size: 52px;
+    cursor: pointer
+}
+
+.conteudo-principal-escrito-botao {
+    background-color: rgb(226, 226, 226);
+    width: 180;
+    height: 60px;
+    border: none;
+    box-shadow: 4px 5px 4px rgba(red, green, blue, alpha);
+    border-radius: 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+}
+
+.conteudo-principal-escrito-botao:hover {
+    background-color: rgb(132, 132, 132);  
+    transition: 1s;  
+}
+
+.conteudo-principal-indicador {
+    position: absolute;
+    margin-top: -254px;
+    margin-left: 860px;
+    font-family: "Jersey 25 Charted", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 64px;
+    color: #ff0000;
+}
+
+.conteudo-secundario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-top: 48px;
+}
+
+.conteudo-secundario-titulo {
+    border-top: 0.4px solid darkblue; 
+    padding-top: 48px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 52px;
+}
+
+.conteudo-secundario-paragrafo {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+}
+
+.rodape-imagem {
+    padding: 32px;
+    border-top: 0.4px solid darkblue;
+}
+
+.rodape-imagem {
+    display: block;
+    margin: 0 auto;
+}
+
